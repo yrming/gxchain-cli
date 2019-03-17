@@ -1,0 +1,44 @@
+{
+  "name": "gxchain-cli",
+  "version": "0.0.2",
+  "description": "CLI for GXChain",
+  "main": "index.js",
+  "bin": {
+    "gxchain": "./bin/cli.js"
+},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gxchain",
+    "cli"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yrming/gxchain-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yrming/gxchain-cli/issues"
+  },
+  "author": "yrming",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.3.0",
+    "commander": "^2.9.0",
+    "figlet": "^1.2.0",
+    "gradient-string": "^1.1.0",
+    "import-lazy": "^3.1.0",
+    "ora": "^3.0.0",
+    "superagent": "^3.8.3",
+    "table": "^4.0.3",
+    "timeago.js": "^3.0.1",
+    "ws": "^6.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
+    "@babel/plugin-transform-async-to-generator": "^7.3.4",
+    "@babel/preset-env": "^7.3.4"
+  }
+}
