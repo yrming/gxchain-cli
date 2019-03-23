@@ -1,5 +1,7 @@
 # GXChain-CLI
 CLI for GXChain
+
+![](http://wx1.sinaimg.cn/large/65ad7d5aly1g1cx2rpy1uj21140hktcv.jpg)
 ## Features
 - Fetch account
 - Fetch assets
@@ -33,6 +35,7 @@ $ gxchain witnesses    # Show witnesses
 ## License
 
 MIT © [YRMING](https://github.com/yrming)
+
 
 
 
