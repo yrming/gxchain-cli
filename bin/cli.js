@@ -3,7 +3,7 @@
 const program = require('commander');
 const importLazy = require('import-lazy')(require);
 const ora = importLazy('ora');
-const GXChain = importLazy('../src/gxchain.js');
+const GXChain = importLazy('../dist/gxchain.js');
 
 program
     .option('-v, --version', 'Output the version info')

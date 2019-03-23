@@ -1,3 +1,5 @@
+let TrxTypes = {};
+
 TrxTypes= {
     'all': '显示全部',
     'transfer': {
