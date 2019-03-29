@@ -16,7 +16,7 @@ const account_listing = {
     white_and_black_listed: 1 | 2
 };
 const listings = Object.keys(account_listing);
-const BLOCK_APIURL = 'http://block.gxb.io/api';
+const BLOCK_APIURL = 'https://block.gxb.io/api';
 const WALLET_APIURL = 'https://wallet.gxb.io/statistics/gxchain';
 const WS_URL = 'wss://node18.gxb.io';
 
@@ -248,13 +248,13 @@ class GXChain {
                         return [TxTypes[type].name, `${asset_issue_issuer.body.account.name} 发行了 ${asset_issue_amount}${asset_issue_asset[0].symbol} ${issue_to_account.body.account.name}`, new TimeAgo().format(item.op.timestamp)];
                     case 'proposal_create': // 22
                         let fee_paying_account1 = await superagent.get(`${BLOCK_APIURL}/account/${item.op[1].fee_paying_account}`).send();
-                        return [TxTypes[type].name, `${fee_paying_account1.body.account.name} 创建了拟议交易`, new TimeAgo().format(item.op.timestamp)];
+                        return [TxTypes['proposal'].proposal_create, `${fee_paying_account1.body.account.name} 创建了拟议交易`, new TimeAgo().format(item.op.timestamp)];
                     case 'proposal_update': // 23
                         let fee_paying_account2 = await superagent.get(`${BLOCK_APIURL}/account/${item.op[1].fee_paying_account}`).send();
-                        return [TxTypes[type].name, `${fee_paying_account2.body.account.name} 更新了拟议交易`, new TimeAgo().format(item.op.timestamp)];
+                        return [TxTypes['proposal'].proposal_update, `${fee_paying_account2.body.account.name} 更新了拟议交易`, new TimeAgo().format(item.op.timestamp)];
                     case 'proposal_delete': // 24
                         let fee_paying_account3 = await superagent.get(`${BLOCK_APIURL}/account/${item.op[1].fee_paying_account}`).send();
-                        return [TxTypes[type].name, `${fee_paying_account3.body.account.name} 删除了拟议交易`, new TimeAgo().format(item.op.timestamp)];
+                        return [TxTypes['proposal'].proposal_delete, `${fee_paying_account3.body.account.name} 删除了拟议交易`, new TimeAgo().format(item.op.timestamp)];
                     case 'vesting_balance_withdraw': // 33
                         let vesting_account = await superagent.get(`${BLOCK_APIURL}/account/${item.op[1].owner}`).send();
                         let vesting_account_asset = await Apis.instance().db_api().exec('get_objects', [[item.op[1].amount.asset_id]]);
