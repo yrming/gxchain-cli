@@ -50,7 +50,7 @@ class GXChain {
      * @memberof GXChain
      */
     static async _displayAccountInfo (info) {
-        if (info) {
+        if (info && info.account) {
             let account = info.account;
             let balances = info.balances;
             let basicOutput = '';
@@ -106,7 +106,7 @@ class GXChain {
             if (process.spinner) {
                 process.spinner.stop();
             }
-            console.log(chalk.green('\n' + chalk.bold('获取信息失败') + '\n'));
+            console.log(chalk.green('\n' + chalk.bold('未查询到账户信息') + '\n'));
         }
     }
 
